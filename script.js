@@ -23,10 +23,6 @@ function getPlayerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  playerSelection = getPlayerChoice();
-  computerSelection = getComputerChoice();
-  console.log(playerSelection);
-  console.log(computerSelection);
   const playerWins = `You win! ${playerSelection} beats ${computerSelection}`;
   const computerWins = `You lose. ${computerSelection} beats ${playerSelection}`;
 
