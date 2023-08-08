@@ -18,17 +18,18 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
   let input = prompt("Enter Rock-Paper-Scissor");
-  input = input.trim().toUpperCase();
-  console.log(input);
+  input = input.trim().toLowerCase();
   return input;
 }
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
-const playerWins = "You win!";
-const computerWins = "Computer wins! You lose.";
-
 function playRound(playerSelection, computerSelection) {
+  playerSelection = getPlayerChoice();
+  computerSelection = getComputerChoice();
+  console.log(playerSelection);
+  console.log(computerSelection);
+  const playerWins = `You win! ${playerSelection} beats ${computerSelection}`;
+  const computerWins = `You lose. ${computerSelection} beats ${playerSelection}`;
+
   if (playerSelection === computerSelection) {
     return "DRAW";
   } else if (playerSelection === "rock") {
@@ -42,3 +43,5 @@ function playRound(playerSelection, computerSelection) {
     if (computerSelection === "paper") return playerWins;
   }
 }
+
+alert(playRound(getPlayerChoice(), getComputerChoice()));
