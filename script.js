@@ -40,4 +40,10 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-alert(playRound(getPlayerChoice(), getComputerChoice()));
+const game = () => {
+  for (let i = 0; i < 5; i++) {
+    console.log(playRound(getPlayerChoice(), getComputerChoice()));
+  }
+};
+
+game();
