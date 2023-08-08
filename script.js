@@ -18,4 +18,12 @@ function getComputerChoice() {
       return "GERSHERE";
       break;
   }
+
+  function playerSelection() {
+    let input = prompt("Enter Rock-Paper-Scissor");
+    input = input.trim().toUpperCase();
+    console.log(input);
+  }
+
+  function playRound(playerSelection, getComputerChoice) {}
 }
