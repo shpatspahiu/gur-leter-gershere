@@ -20,12 +20,6 @@ function getComputerChoice() {
   }
 }
 
-// function getPlayerChoice() {
-//   let input = prompt("Enter Rock-Paper-Scissor");
-//   input = input.trim().toLowerCase();
-//   return input;
-// }
-
 function playRound(playerSelection, computerSelection) {
   const playerWins = `You win! ${playerSelection} beats ${computerSelection}`;
   const computerWins = `You lose. ${computerSelection} beats ${playerSelection}`;
@@ -44,18 +38,21 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+const resultHeading = document.querySelector("#roundResult h3");
+resultHeading.textContent = "ROCK - PAPER - SCISSORS BABBOOOO";
+
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
 
 rockBtn.addEventListener("click", () => {
-  console.log(playRound(ROCK, getComputerChoice()));
+  resultHeading.textContent = playRound(ROCK, getComputerChoice());
 });
 
 paperBtn.addEventListener("click", () => {
-  console.log(playRound(PAPER, getComputerChoice()));
+  resultHeading.textContent = playRound(PAPER, getComputerChoice());
 });
 
 scissorsBtn.addEventListener("click", () => {
-  console.log(playRound(SCISSOR, getComputerChoice()));
+  resultHeading.textContent = playRound(SCISSOR, getComputerChoice());
 });
