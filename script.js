@@ -76,20 +76,24 @@ function checkWinner() {
   if (playerScore >= 5 || computerScore >= 5) {
     endGame();
     if (playerScore > computerScore) {
-      resultHeading.textContent = "Player Wins! Game Over.";
+      resultHeading.textContent = "You Win!";
     } else {
-      resultHeading.textContent = "Computer Wins! Game Over.";
+      resultHeading.textContent = "Computer Wins!";
     }
   }
 }
+
+const contentDiv = document.querySelector("#content");
 
 function endGame() {
   rockBtn.parentNode.removeChild(rockBtn);
   paperBtn.parentNode.removeChild(paperBtn);
   scissorsBtn.parentNode.removeChild(scissorsBtn);
-  const gameOverText = document.createElement("h1");
-  gameOverText.textContent = "Game Over";
-}
+
+  const gameOverMessage = document.createElement("h1");
+  gameOverMessage.textContent = "Game Over";
+  gameOverMessage.style = " font-style: oblique;";
+ }
 
 const resultHeading = document.querySelector("#roundResult h2");
 resultHeading.textContent = "ROCK - PAPER - SCISSORS";
