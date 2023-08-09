@@ -1,26 +1,30 @@
+const ROCK = "Rock";
+const PAPER = "Paper";
+const SCISSOR = "Scissors";
+
 function getComputerChoice() {
   let max = 2;
   let min = 0;
   switch (Math.floor(Math.random() * (max - min + 1) + min)) {
     case 0:
-      return "rock";
+      return ROCK;
       break;
 
     case 1:
-      return "paper";
+      return PAPER;
       break;
 
     case 2:
-      return "scissors";
+      return SCISSOR;
       break;
   }
 }
 
-function getPlayerChoice() {
-  let input = prompt("Enter Rock-Paper-Scissor");
-  input = input.trim().toLowerCase();
-  return input;
-}
+// function getPlayerChoice() {
+//   let input = prompt("Enter Rock-Paper-Scissor");
+//   input = input.trim().toLowerCase();
+//   return input;
+// }
 
 function playRound(playerSelection, computerSelection) {
   const playerWins = `You win! ${playerSelection} beats ${computerSelection}`;
@@ -28,36 +32,30 @@ function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === computerSelection) {
     return "DRAW";
-  } else if (playerSelection === "rock") {
-    if (computerSelection === "paper") return computerWins;
-    if (computerSelection === "scissors") return playerWins;
-  } else if (playerSelection === "paper") {
-    if (computerSelection === "scissors") return computerWins;
-    if (computerSelection === "rock") return playerWins;
-  } else if (playerSelection === "scissors") {
-    if (computerSelection === "rock") return computerWins;
-    if (computerSelection === "paper") return playerWins;
+  } else if (playerSelection === ROCK) {
+    if (computerSelection === PAPER) return computerWins;
+    if (computerSelection === SCISSOR) return playerWins;
+  } else if (playerSelection === PAPER) {
+    if (computerSelection === SCISSOR) return computerWins;
+    if (computerSelection === ROCK) return playerWins;
+  } else if (playerSelection === SCISSOR) {
+    if (computerSelection === ROCK) return computerWins;
+    if (computerSelection === PAPER) return playerWins;
   }
 }
-
-const game = () => {
-  for (let i = 0; i < 5; i++) {
-    console.log(playRound(getPlayerChoice(), getComputerChoice()));
-  }
-};
 
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
 
 rockBtn.addEventListener("click", () => {
-  alert("test Rock");
+  console.log(playRound(ROCK, getComputerChoice()));
 });
 
 paperBtn.addEventListener("click", () => {
-  alert("test paper");
+  console.log(playRound(PAPER, getComputerChoice()));
 });
 
 scissorsBtn.addEventListener("click", () => {
-  alert("test scissors");
+  console.log(playRound(SCISSOR, getComputerChoice()));
 });
