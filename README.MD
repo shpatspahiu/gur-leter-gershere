@@ -1,1 +1,3 @@
-This is the game of rock paper scissors, initial implementation (w/out GUI)
+This is the game of rock paper scissors, with a simple GUI made for you to enjoy ^_^ 
+
+Just joking, it was a good assignment from TOP that I enjoyed doing...
