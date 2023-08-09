@@ -32,33 +32,39 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === ROCK) {
     if (computerSelection === PAPER) {
       computerScore++;
+      updateScore();
       console.log(`computer score: ${computerScore}`);
       return computerWins;
     }
     if (computerSelection === SCISSOR) {
       playerScore++;
+      updateScore();
       console.log(`player score: ${playerScore}`);
       return playerWins;
     }
   } else if (playerSelection === PAPER) {
     if (computerSelection === SCISSOR) {
       computerScore++;
+      updateScore();
       console.log(`computer score: ${computerScore}`);
       return computerWins;
     }
     if (computerSelection === ROCK) {
       playerScore++;
+      updateScore();
       console.log(`player score: ${playerScore}`);
       return playerWins;
     }
   } else if (playerSelection === SCISSOR) {
     if (computerSelection === ROCK) {
       computerScore++;
+      updateScore();
       console.log(`computer score: ${computerScore}`);
       return computerWins;
     }
     if (computerSelection === PAPER) {
       playerScore++;
+      updateScore();
       console.log(`player score: ${playerScore}`);
       return playerWins;
     }
@@ -79,7 +85,9 @@ const resultHeading = document.querySelector("#roundResult h2");
 resultHeading.textContent = "ROCK - PAPER - SCISSORS BABBOOOO";
 
 const score = document.querySelector("#roundResult p");
-score.textContent = `You: ${playerScore} | Computer: ${computerScore}`;
+function updateScore() {
+  score.textContent = `You: ${playerScore} | Computer: ${computerScore}`;
+}
 
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
