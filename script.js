@@ -24,7 +24,6 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  checkWinner();
   const playerWins = `You win! ${playerSelection} beats ${computerSelection}`;
   const computerWins = `You lose. ${computerSelection} beats ${playerSelection}`;
 
@@ -88,12 +87,15 @@ const scissorsBtn = document.querySelector("#scissors");
 
 rockBtn.addEventListener("click", () => {
   resultHeading.textContent = playRound(ROCK, getComputerChoice());
+  checkWinner();
 });
 
 paperBtn.addEventListener("click", () => {
   resultHeading.textContent = playRound(PAPER, getComputerChoice());
+  checkWinner();
 });
 
 scissorsBtn.addEventListener("click", () => {
   resultHeading.textContent = playRound(SCISSOR, getComputerChoice());
+  checkWinner();
 });
