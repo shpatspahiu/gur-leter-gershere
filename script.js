@@ -46,4 +46,18 @@ const game = () => {
   }
 };
 
-game();
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+
+rockBtn.addEventListener("click", () => {
+  alert("test Rock");
+});
+
+paperBtn.addEventListener("click", () => {
+  alert("test paper");
+});
+
+scissorsBtn.addEventListener("click", () => {
+  alert("test scissors");
+});
