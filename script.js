@@ -86,7 +86,7 @@ resultHeading.textContent = "ROCK - PAPER - SCISSORS BABBOOOO";
 
 const score = document.querySelector("#roundResult p");
 function updateScore() {
-  score.textContent = `You: ${playerScore} | Computer: ${computerScore}`;
+  score.innerHTML = `<strong>Score:</strong> You: ${playerScore} | Computer: ${computerScore}`;
 }
 
 const rockBtn = document.querySelector("#rock");
