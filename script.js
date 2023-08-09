@@ -83,7 +83,7 @@ function checkWinner() {
   }
 }
 
-const contentDiv = document.querySelector("#content");
+const contentDiv = document.querySelector(".content");
 
 function endGame() {
   rockBtn.parentNode.removeChild(rockBtn);
@@ -93,12 +93,14 @@ function endGame() {
   const gameOverMessage = document.createElement("h1");
   gameOverMessage.textContent = "Game Over";
   gameOverMessage.style = " font-style: oblique;";
- }
+  contentDiv.appendChild(gameOverMessage);
+}
 
 const resultHeading = document.querySelector("#roundResult h2");
-resultHeading.textContent = "ROCK - PAPER - SCISSORS";
-
 const score = document.querySelector("#roundResult p");
+resultHeading.textContent = "- ";
+score.textContent = " - ";
+
 function updateScore() {
   score.innerHTML = `<strong>Score:</strong> You: ${playerScore} | Computer: ${computerScore}`;
 }
