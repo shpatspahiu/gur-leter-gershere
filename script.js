@@ -92,7 +92,7 @@ function endGame() {
 }
 
 const resultHeading = document.querySelector("#roundResult h2");
-resultHeading.textContent = "ROCK - PAPER - SCISSORS BABBOOOO";
+resultHeading.textContent = "ROCK - PAPER - SCISSORS";
 
 const score = document.querySelector("#roundResult p");
 function updateScore() {
