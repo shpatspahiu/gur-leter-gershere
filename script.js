@@ -28,6 +28,7 @@ function playRound(playerSelection, computerSelection) {
   const computerWins = `You lose. ${computerSelection} beats ${playerSelection}`;
 
   if (playerSelection === computerSelection) {
+    updateScore();
     return "DRAW";
   } else if (playerSelection === ROCK) {
     if (computerSelection === PAPER) {
@@ -73,12 +74,21 @@ function playRound(playerSelection, computerSelection) {
 
 function checkWinner() {
   if (playerScore >= 5 || computerScore >= 5) {
+    endGame();
     if (playerScore > computerScore) {
       resultHeading.textContent = "Player Wins! Game Over.";
     } else {
       resultHeading.textContent = "Computer Wins! Game Over.";
     }
   }
+}
+
+function endGame() {
+  rockBtn.parentNode.removeChild(rockBtn);
+  paperBtn.parentNode.removeChild(paperBtn);
+  scissorsBtn.parentNode.removeChild(scissorsBtn);
+  const gameOverText = document.createElement("h1");
+  gameOverText.textContent = "Game Over";
 }
 
 const resultHeading = document.querySelector("#roundResult h2");
