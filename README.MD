@@ -1,3 +1,3 @@
-This is the game of rock paper scissors, with a simple GUI made for you to enjoy ^_^ 
+#Rock-paper-scissors
 
-Just joking, it was a good assignment from TOP that I enjoyed doing...
+Made as a simple assignment from TOP
